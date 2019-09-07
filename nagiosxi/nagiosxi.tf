@@ -3,7 +3,7 @@ resource "aws_instance" "nagios" {
     instance_type = "${var.instance_type}"
     key_name =  "${var.key_name}"
     associate_public_ip_address = true
-    security_groups = ["${aws_security_group.nagios.name}"]
+    security_groups = ["${aws_security_group.nagiosxi.name}"]
 
     provisioner "remote-exec" {
         connection {
