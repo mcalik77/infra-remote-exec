@@ -14,7 +14,8 @@ resource "aws_instance" "nagiosxi" {
         }
         inline  = [
             "sudo  yum install unzip curl -y",
-            "sudo curl https://assets.nagios.com/downloads/nagiosxi/install.sh | sh"
+            "sudo su -",
+            "curl https://assets.nagios.com/downloads/nagiosxi/install.sh | sh"
 
         ]
     }
