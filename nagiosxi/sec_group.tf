@@ -1,5 +1,5 @@
-resource "aws_security_group" "examle" {
-  name        = "example"
+resource "aws_security_group" "nagiosxi" {
+  name        = "nagiosxi"
   description = "Allow inbound traffic"
   vpc_id      = "${var.vpc}"
 
@@ -13,15 +13,15 @@ resource "aws_security_group" "examle" {
     
   }
   ingress {
-    from_port   = 5667
-    to_port     = 5667
+    from_port   = 80
+    to_port     = 80
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
   egress {
     from_port       = 0
-    to_port         = 0
-    protocol        = "-1"
+    to_port         = 65535
+    protocol        = "tcp"
     cidr_blocks     = ["0.0.0.0/0"]
 }
 tags = {
