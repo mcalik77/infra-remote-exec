@@ -1,4 +1,4 @@
-resource "aws_instance" "nagios" {
+resource "aws_instance" "nagiosxi" {
     ami = "${var.ami}"
     instance_type = "${var.instance_type}"
     key_name =  "${var.key_name}"
