@@ -13,8 +13,8 @@ resource "aws_instance" "nagiosxi" {
             private_key = "${file("~/.ssh/id_rsa")}"
         }
         inline  = [
-            "sudo  yum install curl -y",
             "sudo su -",
+            "yum install wget -y",
             "curl https://assets.nagios.com/downloads/nagiosxi/install.sh | sh"
 
         ]
